@@ -658,3 +658,8 @@ body {
 a, button, .close-modal, .timeline-content, .services-box, .projects-box, .cert-box {
     cursor: none; /* keep hidden over links */
 }
+
+.contact-form .input-box input, .contact-form textarea {
+    border: 1px solid rgba(0, 0, 0, 0.1) !important;
+}
+
