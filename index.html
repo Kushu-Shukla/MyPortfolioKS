@@ -141,19 +141,43 @@
 
     <!-- CONTACT SECTION -->
     <section class="contact" id="contact">
-        <h2 class="heading">Contact <span>Me!</span></h2>
-        <form action="#">
-            <div class="input-box">
-                <input type="text" placeholder="Full Name">
-                <input type="email" placeholder="Email Address">
+        <h2 class="heading">Let's <span>Connect!</span></h2>
+        
+        <div class="contact-container">
+            <!-- Contact Info Cards -->
+            <div class="contact-info">
+                <div class="info-card">
+                    <i class='bx bx-envelope'></i>
+                    <h4>Email</h4>
+                    <p>kushushukla24@gmail.com</p>
+                    <a href="mailto:kushushukla24@gmail.com" class="info-link">Write me <i class='bx bx-right-arrow-alt'></i></a>
+                </div>
+                <div class="info-card">
+                    <i class='bx bxl-whatsapp'></i>
+                    <h4>WhatsApp</h4>
+                    <p>+91-7380673373</p>
+                    <a href="https://wa.me/917380673373" target="_blank" class="info-link">Message me <i class='bx bx-right-arrow-alt'></i></a>
+                </div>
+                <div class="info-card">
+                    <i class='bx bx-map'></i>
+                    <h4>Location</h4>
+                    <p>Prayagraj, UP, India</p>
+                </div>
             </div>
-            <div class="input-box">
-                <input type="number" placeholder="Mobile Number">
-                <input type="text" placeholder="Email Subject">
-            </div>
-            <textarea name="" id="" cols="30" rows="10" placeholder="Your Message"></textarea>
-            <input type="submit" value="Send Message" class="btn">
-        </form>
+
+            <!-- Contact Form -->
+            <form action="#" class="contact-form">
+                <div class="input-box">
+                    <input type="text" placeholder="First Name" required>
+                    <input type="email" placeholder="Email Address" required>
+                </div>
+                <div class="input-box">
+                    <input type="text" placeholder="Project Type / Subject" style="width: 100%;" required>
+                </div>
+                <textarea name="" id="" cols="30" rows="6" placeholder="Tell me about your project..." required></textarea>
+                <button type="submit" class="btn send-btn">Send Message <i class='bx bx-send'></i></button>
+            </form>
+        </div>
     </section>
 
     <!-- JAVASCRIPT -->
