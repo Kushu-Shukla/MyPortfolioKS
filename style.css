@@ -229,7 +229,15 @@ body {
 }
 
 .services h2 {
-    margin-bottom: 5rem;
+    margin-bottom: 1rem;
+}
+
+.services-category {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: var(--text-color);
+    font-family: 'Dancing Script', cursive;
 }
 
 .services-container {
