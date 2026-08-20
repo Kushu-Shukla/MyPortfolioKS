@@ -632,6 +632,7 @@ body {
     cursor: none; /* Hide default cursor */
 }
 
+@media (pointer: fine) {
 .cursor-dot {
     width: 8px;
     height: 8px;
@@ -658,8 +659,45 @@ body {
 a, button, .close-modal, .timeline-content, .services-box, .projects-box, .cert-box {
     cursor: none; /* keep hidden over links */
 }
+}
 
 .contact-form .input-box input, .contact-form textarea {
     border: 1px solid rgba(0, 0, 0, 0.1) !important;
 }
 
+
+
+/* DARK MODE VARIABLES */
+body.dark-mode {
+    --bg-color: #0f0f11;
+    --second-bg-color: #1a1a1d;
+    --text-color: #f0f0f0;
+}
+
+body.dark-mode .modal-content, 
+body.dark-mode .cert-box, 
+body.dark-mode .services-box, 
+body.dark-mode .info-card,
+body.dark-mode .testimonial-slide,
+body.dark-mode .ai-demo-container,
+body.dark-mode .contact-form,
+body.dark-mode .timeline-content {
+    background: var(--second-bg-color) !important;
+    color: var(--text-color);
+    box-shadow: 0 0 20px rgba(255, 107, 158, 0.05);
+}
+
+body.dark-mode .navbar a {
+    color: var(--text-color);
+}
+
+
+/* MOBILE CURSOR FIX */
+@media (pointer: coarse), (max-width: 768px) {
+    body, a, button, .close-modal, .timeline-content, .services-box, .projects-box, .cert-box {
+        cursor: auto !important; /* Restore normal cursor on mobile */
+    }
+    .cursor-dot, .cursor-outline {
+        display: none !important; /* Hide custom cursor dots on mobile */
+    }
+}

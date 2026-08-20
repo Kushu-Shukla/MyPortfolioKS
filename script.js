@@ -142,3 +142,15 @@ ScrollReveal().reveal('.home-content, section.about .heading, section.testimonia
 ScrollReveal().reveal('.home-img, .testimonial-wrapper, .contact form', { origin: 'bottom' });
 ScrollReveal().reveal('.home-content h1, .about-img', { origin: 'left' });
 ScrollReveal().reveal('.home-content p, .about-content', { origin: 'right' });
+
+
+// Dark Mode Toggle
+const darkModeIcon = document.getElementById('dark-mode-icon');
+darkModeIcon.addEventListener('click', () => {
+    document.body.classList.toggle('dark-mode');
+    if (document.body.classList.contains('dark-mode')) {
+        darkModeIcon.classList.replace('bx-moon', 'bx-sun');
+    } else {
+        darkModeIcon.classList.replace('bx-sun', 'bx-moon');
+    }
+});
