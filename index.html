@@ -22,10 +22,11 @@
         <nav class="navbar">
             <a href="#home" style="--i:1" class="active">Home</a>
             <a href="#about" style="--i:2">About</a>
-            <a href="#services" style="--i:3">Services</a>
-            <a href="#projects" style="--i:4">Projects</a>
-            <a href="#certifications" style="--i:5">Certificates</a>
-            <a href="#journey" style="--i:6">Journey</a>
+            <a href="#" onclick="openModal('modal-services'); return false;" style="--i:3">Services</a>
+            <a href="#" onclick="openModal('modal-projects'); return false;" style="--i:4">Projects</a>
+            <a href="#" onclick="openModal('modal-certifications'); return false;" style="--i:5">Certificates</a>
+            <a href="#" onclick="openModal('modal-skills'); return false;" style="--i:5.5">Skills</a>
+            <a href="#" onclick="openModal('modal-journey'); return false;" style="--i:6">Journey</a>
             <a href="#contact" style="--i:7">Contact</a>
         </nav>
     </header>
@@ -42,9 +43,11 @@
                 <a href="https://linkedin.com/in/kushu-shukla" target="_blank" style="--i:7"><i class='bx bxl-linkedin'></i></a>
                 <a href="https://github.com/Kushu-Shukla" target="_blank" style="--i:8"><i class='bx bxl-github'></i></a>
                 <a href="mailto:kushushukla24@gmail.com" style="--i:9"><i class='bx bxs-envelope'></i></a>
+                <a href="https://www.instagram.com/_kushukla_/" target="_blank" style="--i:10"><i class='bx bxl-instagram'></i></a>
             </div>
 
             <a href="#contact" class="btn">Hire Me</a>
+            <a href="resume.pdf" download class="btn cv-btn" style="background: transparent; color: var(--main-color); border: 2px solid var(--main-color); margin-left: 10px;">Download CV</a>
         </div>
         <div class="home-img">
             <img src="images/profile.png" alt="Kushu Shukla">
@@ -64,14 +67,114 @@
                 <p style="font-size: 1.1rem; margin-bottom: 1.5rem; line-height: 1.8;">Hi, I'm Kushu Shukla! I am a Computer Science Engineering student at Lovely Professional University (B.Tech). I am uniquely positioned at the intersection of deep technical engineering and dynamic digital marketing, allowing me to build intelligent systems and effectively communicate their value to the world.</p>
                 <p style="font-size: 1.1rem; margin-bottom: 1.5rem; line-height: 1.8;">As an <strong>AI Engineer at Nyukt AI</strong> and a Certified Data Analyst (SAP/Oracle), I specialize in building end-to-end Machine Learning pipelines, NLP applications, and scalable web platforms. Simultaneously, as an <strong>In-House Social Media Manager at CleardartLLC</strong>, I direct brand strategy, analyze engagement metrics via Meta Business Suite, and create stunning visual campaigns. I also work as a <strong>Freelance Web Developer</strong>, delivering custom, responsive websites tailored to diverse client needs.</p>
                 <p style="font-size: 1.1rem; margin-bottom: 2rem; line-height: 1.8;">From writing complex algorithms in Python and C++ to designing beautiful, engaging content calendars in Canva, I bring a rare blend of analytical problem-solving and creative storytelling to everything I do.</p>
-                <a href="#services" class="btn">Read More</a>
+                <a href="#" onclick="openModal('modal-about-more'); return false;" class="btn">Read More</a>
             </div>
         </div>
     </section>
 
-    <!-- SERVICES SECTION -->
-    <section class="services" id="services">
-        <h2 class="heading">My <span>Services</span></h2>
+    
+<div id="modal-about-more" class="modal">
+  <div class="modal-content">
+    <span class="close-modal" onclick="closeModal('modal-about-more')">&times;</span>
+    <h2 class="heading">More <span>About Me</span></h2>
+    <div style="text-align: center; margin-top: 1.5rem; margin-bottom: 1.5rem;">
+        <img src="images/study_aesthetic.png" alt="Study Setup" style="max-width: 100%; max-height: 400px; border-radius: 1rem; box-shadow: 0 5px 15px rgba(0,0,0,0.1); object-fit: cover;">
+    </div>
+    <p style="font-size: 1.1rem; line-height: 1.8; margin-top: 1rem;">
+       I am deeply passionate about the intersection of human psychology, creative storytelling, and cutting-edge artificial intelligence. Over the years, I've honed my skills to be a bridge between highly technical environments and non-technical stakeholders. 
+       <br><br>
+       When I'm not coding or designing social media strategies, you can find me exploring new technologies, participating in hackathons, or continuously learning to expand my skill set.
+    </p>
+  </div>
+</div>
+
+
+<div id="modal-skills" class="modal">
+  <div class="modal-content" style="max-width: 900px;">
+    <span class="close-modal" onclick="closeModal('modal-skills')">&times;</span>
+    <h2 class="heading">Tech Stack & <span>Tools</span></h2>
+    
+    <div style="display: flex; flex-wrap: wrap; gap: 4rem; margin-top: 3rem;">
+        
+        <!-- AI & Development -->
+        <div style="flex: 1 1 300px;">
+            <h3 style="font-size: 1.5rem; margin-bottom: 2rem; color: var(--text-color);"><i class='bx bx-code-alt'></i> AI & Development</h3>
+            
+            <div class="skill-bar" style="margin-bottom: 1.5rem;">
+                <div class="skill-info" style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                    <span style="font-weight: 500;">Python / C++</span>
+                    <span>90%</span>
+                </div>
+                <div class="progress-line" style="height: 10px; background: #ffe4ed; border-radius: 10px; position: relative;">
+                    <span style="position: absolute; height: 100%; background: var(--main-color); border-radius: 10px; width: 90%;"></span>
+                </div>
+            </div>
+
+            <div class="skill-bar" style="margin-bottom: 1.5rem;">
+                <div class="skill-info" style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                    <span style="font-weight: 500;">LangChain & NLP</span>
+                    <span>85%</span>
+                </div>
+                <div class="progress-line" style="height: 10px; background: #ffe4ed; border-radius: 10px; position: relative;">
+                    <span style="position: absolute; height: 100%; background: var(--main-color); border-radius: 10px; width: 85%;"></span>
+                </div>
+            </div>
+
+            <div class="skill-bar" style="margin-bottom: 1.5rem;">
+                <div class="skill-info" style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                    <span style="font-weight: 500;">Web Development (React, HTML/CSS)</span>
+                    <span>80%</span>
+                </div>
+                <div class="progress-line" style="height: 10px; background: #ffe4ed; border-radius: 10px; position: relative;">
+                    <span style="position: absolute; height: 100%; background: var(--main-color); border-radius: 10px; width: 80%;"></span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Marketing & Data -->
+        <div style="flex: 1 1 300px;">
+            <h3 style="font-size: 1.5rem; margin-bottom: 2rem; color: var(--text-color);"><i class='bx bx-trending-up'></i> Marketing & Data</h3>
+            
+            <div class="skill-bar" style="margin-bottom: 1.5rem;">
+                <div class="skill-info" style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                    <span style="font-weight: 500;">Social Media Strategy</span>
+                    <span>95%</span>
+                </div>
+                <div class="progress-line" style="height: 10px; background: #ffe4ed; border-radius: 10px; position: relative;">
+                    <span style="position: absolute; height: 100%; background: var(--main-color); border-radius: 10px; width: 95%;"></span>
+                </div>
+            </div>
+
+            <div class="skill-bar" style="margin-bottom: 1.5rem;">
+                <div class="skill-info" style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                    <span style="font-weight: 500;">Canva & Visual Design</span>
+                    <span>90%</span>
+                </div>
+                <div class="progress-line" style="height: 10px; background: #ffe4ed; border-radius: 10px; position: relative;">
+                    <span style="position: absolute; height: 100%; background: var(--main-color); border-radius: 10px; width: 90%;"></span>
+                </div>
+            </div>
+
+            <div class="skill-bar" style="margin-bottom: 1.5rem;">
+                <div class="skill-info" style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                    <span style="font-weight: 500;">SAP / Oracle Analytics</span>
+                    <span>75%</span>
+                </div>
+                <div class="progress-line" style="height: 10px; background: #ffe4ed; border-radius: 10px; position: relative;">
+                    <span style="position: absolute; height: 100%; background: var(--main-color); border-radius: 10px; width: 75%;"></span>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+  </div>
+</div>
+
+<!-- SERVICES SECTION -->
+    <div id="modal-services" class="modal">
+  <div class="modal-content">
+<section class="services" id="services" style="padding: 0; min-height: auto; background: transparent;">
+        <span class="close-modal" onclick="closeModal('modal-services')">&times;</span><h2 class="heading">My <span>Services</span></h2>
         
         <h3 class="services-category">Technical Services</h3>
         <div class="services-container">
@@ -117,11 +220,27 @@
             </div>
         </div>
     </section>
+  </div>
+</div>
 
     <!-- PROJECTS SECTION -->
-    <section class="projects" id="projects">
-        <h2 class="heading">Latest <span>Projects</span></h2>
+    <div id="modal-projects" class="modal">
+  <div class="modal-content">
+<section class="projects" id="projects" style="padding: 0; min-height: auto; background: transparent;">
+        <span class="close-modal" onclick="closeModal('modal-projects')">&times;</span><h2 class="heading">Latest <span>Projects</span></h2>
         <div class="projects-container">
+
+        <div class="ai-demo-container" style="background: var(--bg-color); padding: 2rem; border-radius: 1.5rem; margin-bottom: 3rem; text-align: center; box-shadow: inset 0 0 20px rgba(0,0,0,0.02);">
+            <h3 style="font-size: 1.8rem; color: var(--main-color); margin-bottom: 1rem;"><i class='bx bx-bot'></i> Try My AI Sentiment Analyzer</h3>
+            <p style="margin-bottom: 1.5rem; color: #666;">Type a sentence below to test a lightweight NLP sentiment model simulation in real-time.</p>
+            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                <input type="text" id="ai-input" placeholder="e.g. This portfolio is absolutely amazing!" style="padding: 1rem 1.5rem; width: 100%; max-width: 400px; border-radius: 30px; border: 1px solid #ddd; outline: none; font-size: 1rem;">
+                <button onclick="analyzeSentiment()" class="btn" style="border: none; cursor: pointer;">Analyze</button>
+            </div>
+            <div id="ai-result" style="margin-top: 1.5rem; font-size: 1.2rem; font-weight: bold; min-height: 30px;"></div>
+        </div>
+        <h3 class="services-category" style="margin-bottom: 2rem; font-size: 2rem;">Development Projects</h3>
+
             
             <div class="projects-box">
                 <img src="images/aesthetic_coding.png" alt="Aesthetic Coding" style="width: 100%; height: 250px; object-fit: cover; border-radius: 1rem; margin-bottom: 1.5rem;">
@@ -152,10 +271,37 @@
 
         </div>
     </section>
+  </div>
+</div>
+
+    
+        <h3 class="services-category" style="margin-top: 4rem; margin-bottom: 2rem; font-size: 2rem;">Marketing Impact & Results</h3>
+        <div class="projects-container" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem;">
+            <div class="cert-box" style="padding: 2rem; background: var(--bg-color);">
+                <h2 style="font-size: 3rem; color: var(--main-color); margin-bottom: 0.5rem;">50%</h2>
+                <h3 style="font-size: 1.2rem;">Engagement Increase</h3>
+                <p>Across all major social platforms within 3 months.</p>
+            </div>
+            <div class="cert-box" style="padding: 2rem; background: var(--bg-color);">
+                <h2 style="font-size: 3rem; color: var(--main-color); margin-bottom: 0.5rem;">15+</h2>
+                <h3 style="font-size: 1.2rem;">Campaigns Managed</h3>
+                <p>End-to-end strategy, design, and execution.</p>
+            </div>
+            <div class="cert-box" style="padding: 2rem; background: var(--bg-color);">
+                <h2 style="font-size: 3rem; color: var(--main-color); margin-bottom: 0.5rem;">10k+</h2>
+                <h3 style="font-size: 1.2rem;">Organic Reach</h3>
+                <p>Growth generated through optimized content strategies.</p>
+            </div>
+        </div>
+
+  </div>
+</div>
 
     <!-- CERTIFICATIONS SECTION -->
-    <section class="certifications" id="certifications">
-        <h2 class="heading">My <span>Certifications</span></h2>
+    <div id="modal-certifications" class="modal">
+  <div class="modal-content">
+<section class="certifications" id="certifications" style="padding: 0; min-height: auto; background: transparent;">
+        <span class="close-modal" onclick="closeModal('modal-certifications')">&times;</span><h2 class="heading">My <span>Certifications</span></h2>
         <div class="certifications-container">
             
             <div class="cert-box">
@@ -184,12 +330,16 @@
             
         </div>
     </section>
+  </div>
+</div>
 
     <!-- JOURNEY SECTION (Education & Experience) -->
-    <section class="timeline" id="journey">
-        <h2 class="heading">My <span>Journey</span></h2>
+    <div id="modal-journey" class="modal">
+  <div class="modal-content">
+<section class="timeline" id="journey" style="padding: 0; min-height: auto; background: transparent;">
+        <span class="close-modal" onclick="closeModal('modal-journey')">&times;</span><h2 class="heading">My <span>Journey</span></h2>
         
-        <div class="timeline-container">
+        <div style="text-align: center; margin-bottom: 2rem;"><img src="images/journey_image.png" style="max-width: 100%; border-radius: 1rem; box-shadow: 0 5px 15px rgba(0,0,0,0.1);"></div><div class="timeline-container">
             <!-- Current Roles -->
             <div class="timeline-box">
                 <div class="timeline-content">
@@ -218,6 +368,36 @@
                     <h4 style="color: var(--main-color); margin-bottom: 10px;">Lovely Professional University</h4>
                     <p>Maintaining a strong academic record (CGPA: 7.40) while actively participating in tech communities, hackathons, and developing core skills in programming, AI, and software engineering.</p>
                 </div>
+            </div>
+        </div>
+    </section>
+  </div>
+</div>
+
+    
+    <!-- TESTIMONIALS SECTION -->
+    <section class="testimonials" id="testimonials" style="padding: 100px 10%; background: var(--second-bg-color); min-height: auto;">
+        <h2 class="heading">Client <span>Testimonials</span></h2>
+        
+        <div class="testimonial-wrapper" style="position: relative; max-width: 800px; margin: 0 auto; overflow: hidden; border-radius: 2rem; box-shadow: 0 15px 40px rgba(0,0,0,0.05); background: #fff; padding: 3rem;">
+            <div class="testimonial-slide active" style="text-align: center; display: block;">
+                <i class='bx bxs-quote-alt-left' style="font-size: 3rem; color: var(--main-color); margin-bottom: 1rem;"></i>
+                <p style="font-size: 1.1rem; font-style: italic; color: #666; margin-bottom: 2rem; line-height: 1.8;">"Kushu's work on our social media campaigns was nothing short of brilliant. The combination of technical knowledge and marketing savvy drastically improved our engagement rates!"</p>
+                <h3 style="font-size: 1.2rem; color: var(--text-color);">Sarah Jenkins</h3>
+                <span style="color: var(--main-color); font-size: 0.9rem;">Marketing Director, CleardartLLC</span>
+            </div>
+            
+            <div class="testimonial-slide" style="text-align: center; display: none;">
+                <i class='bx bxs-quote-alt-left' style="font-size: 3rem; color: var(--main-color); margin-bottom: 1rem;"></i>
+                <p style="font-size: 1.1rem; font-style: italic; color: #666; margin-bottom: 2rem; line-height: 1.8;">"An exceptional web developer who built a beautiful and incredibly fast web application for us. Highly recommended for any complex AI/Web integration."</p>
+                <h3 style="font-size: 1.2rem; color: var(--text-color);">Michael Chen</h3>
+                <span style="color: var(--main-color); font-size: 0.9rem;">Startup Founder</span>
+            </div>
+
+            <!-- Controls -->
+            <div class="testimonial-nav" style="display: flex; justify-content: center; gap: 1rem; margin-top: 2rem;">
+                <button onclick="prevTestimonial()" style="background: var(--bg-color); border: none; font-size: 2rem; color: var(--main-color); cursor: pointer; border-radius: 50%; width: 45px; height: 45px; display: flex; align-items: center; justify-content: center; transition: 0.3s;"><i class='bx bx-chevron-left'></i></button>
+                <button onclick="nextTestimonial()" style="background: var(--bg-color); border: none; font-size: 2rem; color: var(--main-color); cursor: pointer; border-radius: 50%; width: 45px; height: 45px; display: flex; align-items: center; justify-content: center; transition: 0.3s;"><i class='bx bx-chevron-right'></i></button>
             </div>
         </div>
     </section>
