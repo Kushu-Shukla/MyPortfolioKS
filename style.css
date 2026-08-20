@@ -173,8 +173,10 @@ body {
 }
 
 .home-img img {
-    width: 25vw;
-    height: 25vw;
+    width: 20vw;
+    height: 20vw;
+    max-width: 350px;
+    max-height: 350px;
     border-radius: 50%;
     object-fit: cover;
     box-shadow: 0 0 50px rgba(255, 107, 158, 0.5);
@@ -531,5 +533,5 @@ body {
     .home-content h1 { font-size: 40px; }
     .navbar a { display: block; margin: 10px 0; }
     .contact form .input-box input { width: 100%; }
-    .home-img img { width: 60vw; height: 60vw; margin-top: 40px;}
+    .home-img img { width: 45vw; height: 45vw; margin-top: 40px;}
 }
