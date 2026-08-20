@@ -172,13 +172,13 @@ body {
     transform: translateY(-3px);
 }
 
-.home-img .glowing-circle {
-    width: 30vw;
-    height: 30vw;
+.home-img img {
+    width: 25vw;
+    height: 25vw;
     border-radius: 50%;
-    background: linear-gradient(135deg, var(--main-color), #ffb6c1);
-    box-shadow: 0 0 50px rgba(255, 107, 158, 0.5), inset 0 0 30px rgba(255, 255, 255, 0.5);
-    opacity: 0.8;
+    object-fit: cover;
+    box-shadow: 0 0 50px rgba(255, 107, 158, 0.5);
+    border: 8px solid rgba(255, 255, 255, 0.8);
     animation: float 4s infinite alternate;
 }
 
@@ -531,5 +531,5 @@ body {
     .home-content h1 { font-size: 40px; }
     .navbar a { display: block; margin: 10px 0; }
     .contact form .input-box input { width: 100%; }
-    .home-img .glowing-circle { width: 60vw; height: 60vw; margin-top: 40px;}
+    .home-img img { width: 60vw; height: 60vw; margin-top: 40px;}
 }
