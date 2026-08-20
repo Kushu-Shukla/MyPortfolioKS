@@ -1,6 +1,6 @@
 // Typed.js initialization
 var typed = new Typed('.multiple-text', {
-    strings: ['AI Engineer', 'Social Media Manager', 'Web Developer'],
+    strings: ['AI Engineer', 'Full Stack Developer', 'Data Analyst', 'SEO & Meta Ads Expert'],
     typeSpeed: 100,
     backSpeed: 100,
     backDelay: 1000,
