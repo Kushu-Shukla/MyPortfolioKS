@@ -96,3 +96,49 @@ function analyzeSentiment() {
         }
     }, 1200);
 }
+
+
+// Custom Cursor Logic
+const cursorDot = document.getElementById('cursor-dot');
+const cursorOutline = document.getElementById('cursor-outline');
+
+window.addEventListener('mousemove', function(e) {
+    const posX = e.clientX;
+    const posY = e.clientY;
+
+    cursorDot.style.left = `${posX}px`;
+    cursorDot.style.top = `${posY}px`;
+
+    // Add a slight delay for the outline for a cool trailing effect
+    cursorOutline.animate({
+        left: `${posX}px`,
+        top: `${posY}px`
+    }, { duration: 500, fill: "forwards" });
+});
+
+// Add hover effect to interactive elements
+const interactives = document.querySelectorAll('a, button, .close-modal');
+interactives.forEach(el => {
+    el.addEventListener('mouseenter', () => {
+        cursorOutline.style.width = '50px';
+        cursorOutline.style.height = '50px';
+        cursorOutline.style.backgroundColor = 'rgba(255, 107, 158, 0.1)';
+    });
+    el.addEventListener('mouseleave', () => {
+        cursorOutline.style.width = '30px';
+        cursorOutline.style.height = '30px';
+        cursorOutline.style.backgroundColor = 'transparent';
+    });
+});
+
+// ScrollReveal Animations
+ScrollReveal({ 
+    distance: '80px',
+    duration: 2000,
+    delay: 200,
+});
+
+ScrollReveal().reveal('.home-content, .heading', { origin: 'top' });
+ScrollReveal().reveal('.home-img, .services-container, .projects-container, .testimonial-wrapper, .contact form', { origin: 'bottom' });
+ScrollReveal().reveal('.home-content h1, .about-img', { origin: 'left' });
+ScrollReveal().reveal('.home-content p, .about-content', { origin: 'right' });

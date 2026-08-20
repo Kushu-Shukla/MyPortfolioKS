@@ -625,3 +625,36 @@ body {
     background: var(--main-color) !important;
     color: #fff !important;
 }
+
+
+/* CUSTOM CURSOR */
+body {
+    cursor: none; /* Hide default cursor */
+}
+
+.cursor-dot {
+    width: 8px;
+    height: 8px;
+    background-color: var(--main-color);
+}
+
+.cursor-outline {
+    width: 30px;
+    height: 30px;
+    border: 2px solid var(--main-color);
+}
+
+.cursor-dot, .cursor-outline {
+    position: fixed;
+    top: 0;
+    left: 0;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    z-index: 9999;
+    pointer-events: none;
+}
+
+/* Hover effect for buttons and links */
+a, button, .close-modal, .timeline-content, .services-box, .projects-box, .cert-box {
+    cursor: none; /* keep hidden over links */
+}
