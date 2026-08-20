@@ -325,10 +325,61 @@ body {
     line-height: 1.6;
 }
 
+/* CERTIFICATIONS SECTION */
+.certifications {
+    padding: 100px 10%;
+    background: var(--bg-color);
+    min-height: 100vh;
+}
+
+.certifications h2 {
+    margin-bottom: 4rem;
+}
+
+.certifications-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    align-items: center;
+    gap: 2.5rem;
+}
+
+.cert-box {
+    background: #fff;
+    padding: 2.5rem;
+    border-radius: 2rem;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    border: .2rem solid transparent;
+    transition: .5s ease;
+}
+
+.cert-box:hover {
+    border-color: var(--main-color);
+    transform: translateY(-10px);
+}
+
+.cert-box i {
+    font-size: 3.5rem;
+    color: var(--main-color);
+    margin-bottom: 1rem;
+}
+
+.cert-box h3 {
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    color: var(--main-color);
+}
+
+.cert-box p {
+    color: #666;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
 /* CONTACT SECTION */
 .contact {
     min-height: 100vh;
-    background: var(--bg-color);
+    background: var(--second-bg-color);
     padding: 100px 10%;
 }
 
