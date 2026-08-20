@@ -378,10 +378,83 @@ body {
     line-height: 1.6;
 }
 
+/* TIMELINE SECTION */
+.timeline {
+    padding: 100px 10%;
+    background: var(--second-bg-color);
+    min-height: 100vh;
+}
+
+.timeline h2 {
+    margin-bottom: 4rem;
+}
+
+.timeline-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.timeline-box {
+    position: relative;
+    padding-left: 2rem;
+    border-left: 3px solid var(--main-color);
+}
+
+.timeline-box::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -11px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: var(--main-color);
+}
+
+.timeline-content {
+    background: #fff;
+    padding: 2.5rem;
+    border-radius: 1.5rem;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    transition: 0.4s;
+    border: .2rem solid transparent;
+}
+
+.timeline-content:hover {
+    transform: translateY(-5px);
+    border-color: var(--main-color);
+}
+
+.timeline-date {
+    display: inline-block;
+    color: var(--main-color);
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    background: rgba(255, 107, 158, 0.1);
+    padding: 0.4rem 1rem;
+    border-radius: 2rem;
+}
+
+.timeline-content h3 {
+    font-size: 1.4rem;
+    color: var(--text-color);
+    margin: 0.5rem 0;
+}
+
+.timeline-content p {
+    color: #666;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
 /* CONTACT SECTION */
 .contact {
     min-height: 100vh;
-    background: var(--second-bg-color);
+    background: var(--bg-color);
     padding: 100px 10%;
 }
 
