@@ -238,7 +238,16 @@ function handleUserChat() {
         let lower = userText.toLowerCase();
         let reply = "I'm just a simple AI bot! To talk to the real Kushu, please use the Contact Form at the bottom of the page. She will get back to you ASAP! 😊";
         
-        if (lower.includes("price") || lower.includes("cost") || lower.includes("charge") || lower.includes("money")) {
+        // Custom trained data for personal details
+        if (lower.includes("age") || lower.includes("old are you") || lower.includes("dob") || lower.includes("born")) {
+            reply = "Kushu is a brilliant 20-year-old developer and marketer! Born on March 8th, 2004. 🎂👩‍💻";
+        } else if (lower.includes("name") || lower.includes("who are you") || lower.includes("who is this")) {
+            reply = "I am Kushu's personal AI Assistant! Kushu Shukla is an incredibly talented Full Stack Web Developer, AI Engineer, and Social Media Manager! ✨";
+        } else if (lower.includes("live") || lower.includes("location") || lower.includes("where") || lower.includes("city")) {
+            reply = "Kushu is based in Prayagraj (Allahabad), India! 🇮🇳 But she works with clients and companies globally. 🌍";
+        } else if (lower.includes("what do you do") || lower.includes("skills") || lower.includes("what can you do")) {
+            reply = "Kushu wears three main hats: 1) AI Engineer (building LLM/RAG systems), 2) Full Stack Web Developer (React/Python), and 3) Social Media Manager (SEO & Meta Ads)! 🚀";
+        } else if (lower.includes("price") || lower.includes("cost") || lower.includes("charge") || lower.includes("money")) {
             reply = "My freelance web development services start at just $90 per website! Send me a message using the Contact Form for a custom quote. 💰";
         } else if (lower.includes("code") || lower.includes("dev") || lower.includes("tech") || lower.includes("stack") || lower.includes("ai")) {
             reply = "I am a Full Stack Developer & AI Engineer! I build robust web apps with Python/Flask, React, and integrate GenAI (like RAG systems). Check out my Projects section! 🚀";
