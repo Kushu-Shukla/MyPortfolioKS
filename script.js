@@ -239,14 +239,16 @@ function handleUserChat() {
         let reply = "I'm just a simple AI bot! To talk to the real Kushu, please use the Contact Form at the bottom of the page. She will get back to you ASAP! 😊";
         
         // Custom trained data for personal details
-        if (lower.includes("age") || lower.includes("old are you") || lower.includes("dob") || lower.includes("born")) {
-            reply = "Kushu is a brilliant 20-year-old developer and marketer! Born on March 8th, 2004. 🎂👩‍💻";
+        if (lower.includes("age") || lower.includes("old are you") || lower.includes("dob") || lower.includes("born") || lower.includes("education") || lower.includes("college") || lower.includes("university")) {
+            reply = "Kushu is currently completing her B.Tech in Computer Science at Lovely Professional University (Class of 2026)! 🎓👩‍💻";
         } else if (lower.includes("name") || lower.includes("who are you") || lower.includes("who is this")) {
-            reply = "I am Kushu's personal AI Assistant! Kushu Shukla is an incredibly talented Full Stack Web Developer, AI Engineer, and Social Media Manager! ✨";
+            reply = "I am Kushu's personal AI Assistant! Kushu Shukla is a motivated Computer Science Engineer, specializing as an AI Engineer and Full Stack Developer. ✨";
         } else if (lower.includes("live") || lower.includes("location") || lower.includes("where") || lower.includes("city")) {
-            reply = "Kushu is based in Prayagraj (Allahabad), India! 🇮🇳 But she works with clients and companies globally. 🌍";
-        } else if (lower.includes("what do you do") || lower.includes("skills") || lower.includes("what can you do")) {
-            reply = "Kushu wears three main hats: 1) AI Engineer (building LLM/RAG systems), 2) Full Stack Web Developer (React/Python), and 3) Social Media Manager (SEO & Meta Ads)! 🚀";
+            reply = "Kushu's university is based in Phagwara, Punjab, and she has worked in Bengaluru, India! 🇮🇳 But she is open to roles globally. 🌍";
+        } else if (lower.includes("what do you do") || lower.includes("skills") || lower.includes("what can you do") || lower.includes("experience")) {
+            reply = "Kushu is an AI Engineer with experience at Nyukt AI! She builds end-to-end Machine Learning pipelines (like her Sanskrit RAG system), and develops scalable web apps using Python, Flask, and React! 🚀";
+        } else if (lower.includes("project") || lower.includes("portfolio")) {
+            reply = "Her top projects include a Sanskrit Document RAG System (using LangChain & FAISS), a Sentiment Analysis Model, and a Flask Weather Web App! 💻";
         } else if (lower.includes("price") || lower.includes("cost") || lower.includes("charge") || lower.includes("money")) {
             reply = "My freelance web development services start at just $90 per website! Send me a message using the Contact Form for a custom quote. 💰";
         } else if (lower.includes("code") || lower.includes("dev") || lower.includes("tech") || lower.includes("stack") || lower.includes("ai")) {
