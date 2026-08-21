@@ -563,11 +563,9 @@
             <div class="chat-body" id="chat-body">
                 <div class="bot-msg">Hi! I am Kushu's AI Assistant 🤖. What would you like to know about her?</div>
             </div>
-            <div class="chat-footer" style="flex-wrap: wrap;">
-                <button class="chat-btn" onclick="sendChat('coding')" style="flex: 1 1 45%; margin: 0.2rem;">Coding 💻</button>
-                <button class="chat-btn" onclick="sendChat('marketing')" style="flex: 1 1 45%; margin: 0.2rem;">Marketing 📈</button>
-                <button class="chat-btn" onclick="sendChat('experience')" style="flex: 1 1 45%; margin: 0.2rem;">Experience 💼</button>
-                <button class="chat-btn" onclick="sendChat('pricing')" style="flex: 1 1 45%; margin: 0.2rem;">Pricing 💰</button>
+            <div class="chat-footer" style="padding: 0.8rem; display: flex; gap: 0.5rem; align-items: center; border-top: 1px solid rgba(255,107,158,0.2);">
+                <input type="text" id="chat-input" placeholder="Type a message..." style="flex: 1; padding: 0.8rem; border-radius: 20px; border: 1px solid rgba(0,0,0,0.1); background: var(--bg-color); color: var(--text-color); outline: none;">
+                <button onclick="handleUserChat()" style="background: var(--main-color); color: white; border: none; width: 40px; height: 40px; border-radius: 50%; cursor: pointer; display: flex; justify-content: center; align-items: center; font-size: 1.2rem; transition: 0.3s;"><i class='bx bx-send'></i></button>
             </div>
         </div>
     </div>

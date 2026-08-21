@@ -173,40 +173,61 @@ function toggleChat() {
     document.getElementById('chat-window').classList.toggle('show');
 }
 
-function sendChat(topic) {
+
+
+
+// Handle Free-Text Chat
+document.addEventListener('DOMContentLoaded', () => {
+    const chatInput = document.getElementById('chat-input');
+    if (chatInput) {
+        chatInput.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                handleUserChat();
+            }
+        });
+    }
+});
+
+function handleUserChat() {
+    const inputField = document.getElementById('chat-input');
+    const userText = inputField.value.trim();
+    if (!userText) return;
+    
     const chatBody = document.getElementById('chat-body');
     
-    // User message
+    // 1. Add User Message
     const userMsg = document.createElement('div');
     userMsg.className = 'user-msg';
-    
-    let userText = "";
-    if (topic === 'coding') userText = 'Tell me about Coding';
-    if (topic === 'marketing') userText = 'Tell me about Marketing';
-    if (topic === 'experience') userText = 'What is your Experience?';
-    if (topic === 'pricing') userText = 'How much do you charge?';
-    
     userMsg.innerText = userText;
     chatBody.appendChild(userMsg);
     
-    // Scroll to bottom
+    // Clear input
+    inputField.value = '';
     chatBody.scrollTop = chatBody.scrollHeight;
     
-    // Bot reply (simulate delay)
+    // 2. Generate Bot Reply
     setTimeout(() => {
         const botMsg = document.createElement('div');
         botMsg.className = 'bot-msg';
         
-        if (topic === 'coding') {
-            botMsg.innerHTML = "I am a Full Stack Developer & AI Engineer! I build robust web apps with Python/Flask, React, and integrate GenAI (like LLMs and RAG systems). Check out my Projects section! 🚀";
-        } else if (topic === 'marketing') {
-            botMsg.innerHTML = "I specialize in SEO, Meta Ads, and Data Analytics! I can 10x your traffic using AI-driven content strategies and targeted campaigns. 📈";
-        } else if (topic === 'experience') {
-            botMsg.innerHTML = "I am currently an In-House Social Media Manager at CleardartLLC, and previously worked as a Web Dev Intern at Skillible. Open my Journey popup to see more! 💼";
-        } else if (topic === 'pricing') {
-            botMsg.innerHTML = "My freelance web development services start at just ₹7,000 per website! Send me a message using the Contact Form to get a custom quote. 💰";
+        let lower = userText.toLowerCase();
+        let reply = "I'm just a simple AI bot! To talk to the real Kushu, please use the Contact Form at the bottom of the page. She will get back to you ASAP! 😊";
+        
+        if (lower.includes("price") || lower.includes("cost") || lower.includes("charge") || lower.includes("money")) {
+            reply = "My freelance web development services start at just ₹7,000 per website! Send me a message using the Contact Form for a custom quote. 💰";
+        } else if (lower.includes("code") || lower.includes("dev") || lower.includes("tech") || lower.includes("stack") || lower.includes("ai")) {
+            reply = "I am a Full Stack Developer & AI Engineer! I build robust web apps with Python/Flask, React, and integrate GenAI (like RAG systems). Check out my Projects section! 🚀";
+        } else if (lower.includes("marketing") || lower.includes("seo") || lower.includes("ad") || lower.includes("social")) {
+            reply = "I specialize in SEO, Meta Ads, and Data Analytics! I can 10x your traffic using AI-driven content strategies and targeted campaigns. 📈";
+        } else if (lower.includes("experience") || lower.includes("work") || lower.includes("job") || lower.includes("hire")) {
+            reply = "I am currently an In-House Social Media Manager at CleardartLLC, and previously worked as a Web Dev Intern at Skillible. I am open to freelance work or full-time roles! 💼";
+        } else if (lower.includes("hi") || lower.includes("hello") || lower.includes("hey")) {
+            reply = "Hello there! 👋 How can I help you today? You can ask me about Kushu's coding, marketing, or pricing!";
+        } else if (lower.includes("contact") || lower.includes("email") || lower.includes("phone")) {
+            reply = "You can email Kushu directly at kushushukla24@gmail.com, or just scroll down and use the Contact Form! 📧";
         }
         
+        botMsg.innerHTML = reply;
         chatBody.appendChild(botMsg);
         chatBody.scrollTop = chatBody.scrollHeight;
     }, 800);
