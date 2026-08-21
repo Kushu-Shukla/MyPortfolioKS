@@ -962,3 +962,14 @@ body.dark-mode .stats-banner {
     50% { width: 100%; left: 0; }
     100% { width: 100%; left: 100%; }
 }
+
+
+/* CUSTOM TEXT SELECTION */
+::selection { background: var(--main-color); color: #fff; }
+::-moz-selection { background: var(--main-color); color: #fff; }
+
+/* CUSTOM MENU HOVER */
+.menu-item:hover {
+    background: rgba(255, 107, 158, 0.2);
+    color: var(--main-color) !important;
+}

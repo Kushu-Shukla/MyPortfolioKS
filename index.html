@@ -20,6 +20,17 @@
 </head>
 <body>
 
+    <!-- Custom Context Menu -->
+    <div id="custom-menu" style="display: none; position: absolute; z-index: 100000; width: 220px; background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px); border: 1px solid rgba(255, 107, 158, 0.3); border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); overflow: hidden; padding: 5px 0;">
+        <ul style="list-style: none; margin: 0; padding: 0;">
+            <li class="menu-item" style="padding: 10px 20px; font-size: 0.9rem; color: var(--text-color); cursor: pointer; transition: 0.3s; display: flex; align-items: center; gap: 10px;" onclick="window.location.href='#contact'"><i class='bx bx-envelope'></i> Hire Kushu</li>
+            <li class="menu-item" style="padding: 10px 20px; font-size: 0.9rem; color: var(--text-color); cursor: pointer; transition: 0.3s; display: flex; align-items: center; gap: 10px;" onclick="window.open('resume.pdf')"><i class='bx bx-download'></i> Download CV</li>
+            <div style="height: 1px; background: rgba(255, 107, 158, 0.2); margin: 5px 0;"></div>
+            <li class="menu-item" style="padding: 10px 20px; font-size: 0.9rem; color: var(--text-color); cursor: pointer; transition: 0.3s; display: flex; align-items: center; gap: 10px;" onclick="document.getElementById('dark-mode-icon').click()"><i class='bx bx-moon'></i> Toggle Dark Mode</li>
+        </ul>
+    </div>
+
+
     
     
     <!-- Flashlight Cursor Glow (Dark Mode) -->

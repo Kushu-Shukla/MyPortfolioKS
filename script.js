@@ -514,3 +514,37 @@ if (contactForm && typeof confetti !== 'undefined') {
     });
 }
 // --- END PREMIUM FEATURES --- //
+
+
+// --- FINAL TOUCHES --- //
+
+// 1. Dynamic Browser Tab
+let docTitle = document.title;
+window.addEventListener("blur", () => {
+    document.title = "Come back! 🥺";
+});
+window.addEventListener("focus", () => {
+    document.title = docTitle;
+});
+
+// 2. Custom Right-Click Menu
+const customMenu = document.getElementById("custom-menu");
+if (customMenu) {
+    window.addEventListener("contextmenu", (e) => {
+        e.preventDefault();
+        customMenu.style.display = "block";
+        
+        let x = e.pageX;
+        let y = e.pageY;
+        
+        if (x + customMenu.offsetWidth > window.innerWidth) x = window.innerWidth - customMenu.offsetWidth - 10;
+        if (y + customMenu.offsetHeight > window.innerHeight + window.scrollY) y = window.innerHeight + window.scrollY - customMenu.offsetHeight - 10;
+        
+        customMenu.style.left = x + "px";
+        customMenu.style.top = y + "px";
+    });
+    window.addEventListener("click", () => {
+        customMenu.style.display = "none";
+    });
+}
+// --- END FINAL TOUCHES --- //
