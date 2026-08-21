@@ -139,7 +139,7 @@ ScrollReveal({
 });
 
 ScrollReveal().reveal('.home-content, section.about .heading, section.testimonials .heading, section.contact .heading', { origin: 'top' });
-ScrollReveal().reveal('.home-img, .testimonial-wrapper, .contact form', { origin: 'bottom' });
+ScrollReveal().reveal('.home-img, .testimonial-wrapper', { origin: 'bottom' });
 ScrollReveal().reveal('.home-content h1, .about-img', { origin: 'left' });
 ScrollReveal().reveal('.home-content p, .about-content', { origin: 'right' });
 
