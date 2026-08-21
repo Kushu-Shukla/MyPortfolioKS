@@ -16,6 +16,9 @@
     <script src="https://unpkg.com/typed.js@2.0.15/dist/typed.umd.js"></script>
     <!-- ScrollReveal -->
     <script src="https://unpkg.com/scrollreveal"></script>
+    <!-- Calendly -->
+    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+    <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
 </head>
 <body>
     <!-- Custom Cursor -->
@@ -34,6 +37,7 @@
             <a href="#" onclick="openModal('modal-projects'); return false;" style="--i:4">Projects</a>
             <a href="#" onclick="openModal('modal-certifications'); return false;" style="--i:5">Certificates</a>
             <a href="#" onclick="openModal('modal-skills'); return false;" style="--i:5.5">Skills</a>
+            <a href="#" onclick="openModal('modal-blog'); return false;" style="--i:5.8">Blog</a>
             <a href="#" onclick="openModal('modal-journey'); return false;" style="--i:6">Journey</a>
             <a href="#contact" style="--i:7">Contact</a>
         </nav>
@@ -486,6 +490,26 @@
                     <p>@_kushukla_</p>
                     <a href="https://www.instagram.com/_kushukla_/" target="_blank" class="info-link">Follow Me <i class='bx bx-right-arrow-alt'></i></a>
                 </div>
+
+                <!-- Instagram Grid & Calendly -->
+                <div class="ig-calendly-wrapper" style="margin-top: 2rem;">
+                    <a href="" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/kushushukla24'});return false;" class="btn" style="width: 100%; justify-content: center; margin-bottom: 2rem; background: transparent; border: 2px solid var(--main-color); color: var(--main-color);">
+                        <i class='bx bx-calendar-event' style="margin-right: 0.5rem; font-size: 1.2rem;"></i> Book a 15-Min Meeting
+                    </a>
+                    
+                    <h4 style="text-align: left; margin-bottom: 1rem; font-size: 1.2rem; color: var(--text-color);">Latest on Instagram</h4>
+                    <div class="ig-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px;">
+                        <a href="https://www.instagram.com/_kushukla_/" target="_blank" style="display: block; overflow: hidden; border-radius: 10px; aspect-ratio: 1/1;">
+                            <img src="https://images.unsplash.com/photo-1571171637578-41bc2dd41cd2?q=80&w=500&auto=format&fit=crop" style="width: 100%; height: 100%; object-fit: cover; transition: 0.3s;" class="ig-img">
+                        </a>
+                        <a href="https://www.instagram.com/_kushukla_/" target="_blank" style="display: block; overflow: hidden; border-radius: 10px; aspect-ratio: 1/1;">
+                            <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=500&auto=format&fit=crop" style="width: 100%; height: 100%; object-fit: cover; transition: 0.3s;" class="ig-img">
+                        </a>
+                        <a href="https://www.instagram.com/_kushukla_/" target="_blank" style="display: block; overflow: hidden; border-radius: 10px; aspect-ratio: 1/1;">
+                            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=500&auto=format&fit=crop" style="width: 100%; height: 100%; object-fit: cover; transition: 0.3s;" class="ig-img">
+                        </a>
+                    </div>
+                </div>
             </div>
 
             <!-- Contact Form -->
@@ -521,5 +545,27 @@
 
     <!-- JAVASCRIPT -->
     <script src="script.js"></script>
+
+    <!-- Floating AI Chatbot -->
+    <div class="chatbot-container" id="chatbot-container">
+        <div class="chatbot-bubble" id="chatbot-bubble" onclick="toggleChat()">
+            <i class='bx bx-bot'></i>
+        </div>
+        
+        <div class="chat-window" id="chat-window">
+            <div class="chat-header">
+                <h4>Kushu's AI Assistant</h4>
+                <i class='bx bx-x' onclick="toggleChat()" style="cursor: pointer; font-size: 1.5rem;"></i>
+            </div>
+            <div class="chat-body" id="chat-body">
+                <div class="bot-msg">Hi! I am Kushu's AI Assistant 🤖. What would you like to know about her?</div>
+            </div>
+            <div class="chat-footer">
+                <button class="chat-btn" onclick="sendChat('coding')">Coding Skills 💻</button>
+                <button class="chat-btn" onclick="sendChat('marketing')">Marketing Skills 📈</button>
+            </div>
+        </div>
+    </div>
+
 </body>
 </html>

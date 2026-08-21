@@ -166,3 +166,37 @@ if (menuIcon) {
         navbar.classList.toggle('active');
     });
 }
+
+
+// Chatbot Logic
+function toggleChat() {
+    document.getElementById('chat-window').classList.toggle('show');
+}
+
+function sendChat(topic) {
+    const chatBody = document.getElementById('chat-body');
+    
+    // User message
+    const userMsg = document.createElement('div');
+    userMsg.className = 'user-msg';
+    userMsg.innerText = topic === 'coding' ? 'Tell me about Coding' : 'Tell me about Marketing';
+    chatBody.appendChild(userMsg);
+    
+    // Scroll to bottom
+    chatBody.scrollTop = chatBody.scrollHeight;
+    
+    // Bot reply (simulate delay)
+    setTimeout(() => {
+        const botMsg = document.createElement('div');
+        botMsg.className = 'bot-msg';
+        
+        if (topic === 'coding') {
+            botMsg.innerHTML = "I am a Full Stack Developer & AI Engineer! I build robust web apps with Python/Flask, React, and integrate GenAI (like LLMs and RAG systems). Check out my Projects section! 🚀";
+        } else {
+            botMsg.innerHTML = "I specialize in SEO, Meta Ads, and Data Analytics! I can 10x your traffic using AI-driven content strategies and targeted campaigns. Book a meeting below! 📈";
+        }
+        
+        chatBody.appendChild(botMsg);
+        chatBody.scrollTop = chatBody.scrollHeight;
+    }, 800);
+}
