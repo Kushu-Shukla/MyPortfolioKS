@@ -16,9 +16,7 @@
     <script src="https://unpkg.com/typed.js@2.0.15/dist/typed.umd.js"></script>
     <!-- ScrollReveal -->
     <script src="https://unpkg.com/scrollreveal"></script>
-    <!-- Calendly -->
-    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
-    <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+    
 </head>
 <body>
     <!-- Custom Cursor -->
@@ -493,9 +491,7 @@
 
                 <!-- Instagram Grid & Calendly -->
                 <div class="ig-calendly-wrapper" style="margin-top: 2rem;">
-                    <a href="" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/kushushukla24'});return false;" class="btn" style="width: 100%; justify-content: center; margin-bottom: 2rem; background: transparent; border: 2px solid var(--main-color); color: var(--main-color);">
-                        <i class='bx bx-calendar-event' style="margin-right: 0.5rem; font-size: 1.2rem;"></i> Book a 15-Min Meeting
-                    </a>
+                    
                     
                     <h4 style="text-align: left; margin-bottom: 1rem; font-size: 1.2rem; color: var(--text-color);">Latest on Instagram</h4>
                     <div class="ig-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px;">
@@ -523,6 +519,13 @@
                 </div>
                 <div class="input-box">
                     <input type="text" placeholder="Project Type / Subject" style="width: 100%;" required>
+                </div>
+                <div class="input-box" style="margin-bottom: 1rem;">
+                    <label style="display: block; font-size: 0.9rem; margin-bottom: 0.5rem; color: #777;">Request a Meeting Date & Time (Optional)</label>
+                    <div style="display: flex; gap: 1rem; width: 100%;">
+                        <input type="date" style="flex: 1;">
+                        <input type="time" style="flex: 1;">
+                    </div>
                 </div>
                 <textarea name="" id="" cols="30" rows="6" placeholder="Tell me about your project..." required></textarea>
                 <button type="submit" class="btn send-btn">Send Message <i class='bx bx-send'></i></button>
@@ -560,9 +563,11 @@
             <div class="chat-body" id="chat-body">
                 <div class="bot-msg">Hi! I am Kushu's AI Assistant 🤖. What would you like to know about her?</div>
             </div>
-            <div class="chat-footer">
-                <button class="chat-btn" onclick="sendChat('coding')">Coding Skills 💻</button>
-                <button class="chat-btn" onclick="sendChat('marketing')">Marketing Skills 📈</button>
+            <div class="chat-footer" style="flex-wrap: wrap;">
+                <button class="chat-btn" onclick="sendChat('coding')" style="flex: 1 1 45%; margin: 0.2rem;">Coding 💻</button>
+                <button class="chat-btn" onclick="sendChat('marketing')" style="flex: 1 1 45%; margin: 0.2rem;">Marketing 📈</button>
+                <button class="chat-btn" onclick="sendChat('experience')" style="flex: 1 1 45%; margin: 0.2rem;">Experience 💼</button>
+                <button class="chat-btn" onclick="sendChat('pricing')" style="flex: 1 1 45%; margin: 0.2rem;">Pricing 💰</button>
             </div>
         </div>
     </div>

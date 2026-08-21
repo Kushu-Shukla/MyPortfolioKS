@@ -179,7 +179,14 @@ function sendChat(topic) {
     // User message
     const userMsg = document.createElement('div');
     userMsg.className = 'user-msg';
-    userMsg.innerText = topic === 'coding' ? 'Tell me about Coding' : 'Tell me about Marketing';
+    
+    let userText = "";
+    if (topic === 'coding') userText = 'Tell me about Coding';
+    if (topic === 'marketing') userText = 'Tell me about Marketing';
+    if (topic === 'experience') userText = 'What is your Experience?';
+    if (topic === 'pricing') userText = 'How much do you charge?';
+    
+    userMsg.innerText = userText;
     chatBody.appendChild(userMsg);
     
     // Scroll to bottom
@@ -192,8 +199,12 @@ function sendChat(topic) {
         
         if (topic === 'coding') {
             botMsg.innerHTML = "I am a Full Stack Developer & AI Engineer! I build robust web apps with Python/Flask, React, and integrate GenAI (like LLMs and RAG systems). Check out my Projects section! 🚀";
-        } else {
-            botMsg.innerHTML = "I specialize in SEO, Meta Ads, and Data Analytics! I can 10x your traffic using AI-driven content strategies and targeted campaigns. Book a meeting below! 📈";
+        } else if (topic === 'marketing') {
+            botMsg.innerHTML = "I specialize in SEO, Meta Ads, and Data Analytics! I can 10x your traffic using AI-driven content strategies and targeted campaigns. 📈";
+        } else if (topic === 'experience') {
+            botMsg.innerHTML = "I am currently an In-House Social Media Manager at CleardartLLC, and previously worked as a Web Dev Intern at Skillible. Open my Journey popup to see more! 💼";
+        } else if (topic === 'pricing') {
+            botMsg.innerHTML = "My freelance web development services start at just ₹7,000 per website! Send me a message using the Contact Form to get a custom quote. 💰";
         }
         
         chatBody.appendChild(botMsg);
