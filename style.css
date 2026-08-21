@@ -895,3 +895,19 @@ body.dark-mode .navbar a {
         right: -10px;
     }
 }
+
+
+/* MARQUEE & STATS ANIMATIONS */
+.marquee-content {
+    animation: marqueeScrolling 20s linear infinite;
+}
+.marquee-content span { margin-right: 20px; }
+
+@keyframes marqueeScrolling {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+body.dark-mode .stats-banner {
+    background: var(--bg-color) !important;
+}

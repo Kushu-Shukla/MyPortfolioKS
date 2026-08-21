@@ -232,3 +232,39 @@ function handleUserChat() {
         chatBody.scrollTop = chatBody.scrollHeight;
     }, 800);
 }
+
+
+// Stats Counter Animation
+const counters = document.querySelectorAll('.stat-number');
+const speed = 200;
+
+const animateCounters = () => {
+    counters.forEach(counter => {
+        const updateCount = () => {
+            const target = +counter.getAttribute('data-target');
+            const suffix = counter.getAttribute('data-suffix') || '';
+            const count = +counter.innerText.replace(/[^0-9]/g, '');
+            const inc = target / speed;
+
+            if (count < target) {
+                counter.innerText = Math.ceil(count + inc) + suffix;
+                setTimeout(updateCount, 15);
+            } else {
+                counter.innerText = target + suffix;
+            }
+        };
+        updateCount();
+    });
+};
+
+// Intersection Observer to trigger counter when in view
+const statsSection = document.querySelector('.stats-banner');
+if (statsSection) {
+    const observer = new IntersectionObserver((entries) => {
+        if(entries[0].isIntersecting) {
+            animateCounters();
+            observer.disconnect();
+        }
+    }, { threshold: 0.5 });
+    observer.observe(statsSection);
+}
