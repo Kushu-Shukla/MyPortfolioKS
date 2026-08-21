@@ -358,3 +358,80 @@ function toggleAudio() {
         textLabel.innerText = 'Click to Play';
     }
 }
+
+
+// --- NEW AWWWARDS FEATURES --- //
+
+// 1. Scroll Progress Bar
+window.addEventListener('scroll', () => {
+    const scrollProgress = document.getElementById('scroll-progress');
+    if (scrollProgress) {
+        const totalHeight = document.body.scrollHeight - window.innerHeight;
+        const progress = (window.scrollY / totalHeight) * 100;
+        scrollProgress.style.width = progress + '%';
+    }
+});
+
+// 2. Magnetic Buttons
+const magneticButtons = document.querySelectorAll('.btn');
+magneticButtons.forEach(btn => {
+    btn.addEventListener('mousemove', (e) => {
+        const position = btn.getBoundingClientRect();
+        const x = e.clientX - position.left - position.width / 2;
+        const y = e.clientY - position.top - position.height / 2;
+        btn.style.transform = `translate(${x * 0.3}px, ${y * 0.5}px) scale(1.05)`;
+    });
+    
+    btn.addEventListener('mouseout', () => {
+        btn.style.transform = 'translate(0px, 0px) scale(1)';
+    });
+});
+
+// 3. Matrix Easter Egg (Type "kushu")
+let secretCode = ['k', 'u', 's', 'h', 'u'];
+let codeIndex = 0;
+document.addEventListener('keydown', (e) => {
+    if (e.key.toLowerCase() === secretCode[codeIndex]) {
+        codeIndex++;
+        if (codeIndex === secretCode.length) {
+            triggerMatrix();
+            codeIndex = 0;
+        }
+    } else {
+        codeIndex = 0;
+    }
+});
+
+function triggerMatrix() {
+    const canvas = document.getElementById('matrix-canvas');
+    if (!canvas) return;
+    const ctx = canvas.getContext('2d');
+    canvas.style.display = 'block';
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+    
+    const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789KUSHUAI'.split('');
+    const fontSize = 16;
+    const columns = canvas.width / fontSize;
+    const drops = [];
+    for (let x = 0; x < columns; x++) drops[x] = 1;
+    
+    const draw = setInterval(() => {
+        ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+        ctx.fillStyle = '#0f0';
+        ctx.font = fontSize + 'px monospace';
+        for (let i = 0; i < drops.length; i++) {
+            const text = letters[Math.floor(Math.random() * letters.length)];
+            ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+            if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) drops[i] = 0;
+            drops[i]++;
+        }
+    }, 33);
+    
+    setTimeout(() => {
+        clearInterval(draw);
+        canvas.style.display = 'none';
+    }, 5000); // Hide after 5 seconds
+}
+// --- END AWWWARDS FEATURES --- //
