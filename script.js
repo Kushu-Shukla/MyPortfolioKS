@@ -311,3 +311,25 @@ if (document.getElementById('particles-js') && typeof particlesJS !== 'undefined
         "retina_detect": true
     });
 }
+
+// Audio Play/Pause Logic for Spotify Widget
+function toggleAudio() {
+    const audio = document.getElementById('bg-music');
+    const icon = document.getElementById('music-icon');
+    const bars = document.getElementById('music-bars');
+    const textLabel = document.querySelector('.spotify-widget p');
+    
+    if (audio.paused) {
+        audio.play();
+        icon.classList.remove('bx-play-circle');
+        icon.classList.add('bx-pause-circle');
+        bars.style.display = 'flex';
+        textLabel.innerText = 'Currently Playing';
+    } else {
+        audio.pause();
+        icon.classList.remove('bx-pause-circle');
+        icon.classList.add('bx-play-circle');
+        bars.style.display = 'none';
+        textLabel.innerText = 'Click to Play';
+    }
+}
