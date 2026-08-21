@@ -20,11 +20,29 @@
 </head>
 <body>
 
+    <!-- Developer Terminal Modal -->
+    <div id="dev-terminal" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 650px; max-width: 95%; height: 450px; background: rgba(15, 15, 17, 0.98); border: 1px solid #333; border-radius: 12px; box-shadow: 0 25px 50px rgba(0,0,0,0.7); z-index: 100000; font-family: 'Consolas', 'Courier New', monospace; flex-direction: column;">
+        <div style="background: #252526; padding: 12px 15px; display: flex; justify-content: space-between; align-items: center; border-radius: 12px 12px 0 0; border-bottom: 1px solid #444;">
+            <span style="color: #ccc; font-size: 0.85rem; letter-spacing: 1px;">kushu@portfolio: ~</span>
+            <i class='bx bx-x' id="close-terminal" style="color: var(--main-color); font-size: 1.5rem; cursor: pointer; transition: 0.3s;"></i>
+        </div>
+        <div id="terminal-body" style="padding: 20px; color: #4af626; overflow-y: auto; flex: 1; font-size: 1rem; line-height: 1.6;">
+            <div style="margin-bottom: 15px; color: #888;">Welcome to KushuOS v2.0. Type <span style="color: #fff;">'help'</span> to see available commands.</div>
+            <div id="terminal-output"></div>
+            <div style="display: flex; margin-top: 10px;">
+                <span style="color: #569cd6; margin-right: 10px;">kushu@portfolio:~$</span>
+                <input type="text" id="terminal-input" autocomplete="off" spellcheck="false" style="flex: 1; background: transparent; border: none; color: #4af626; font-family: 'Consolas', 'Courier New', monospace; font-size: 1rem; outline: none;">
+            </div>
+        </div>
+    </div>
+
+
     <!-- Custom Context Menu -->
     <div id="custom-menu" style="display: none; position: absolute; z-index: 100000; width: 220px; background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px); border: 1px solid rgba(255, 107, 158, 0.3); border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); overflow: hidden; padding: 5px 0;">
         <ul style="list-style: none; margin: 0; padding: 0;">
             <li class="menu-item" style="padding: 10px 20px; font-size: 0.9rem; color: var(--text-color); cursor: pointer; transition: 0.3s; display: flex; align-items: center; gap: 10px;" onclick="window.location.href='#contact'"><i class='bx bx-envelope'></i> Hire Kushu</li>
             <li class="menu-item" style="padding: 10px 20px; font-size: 0.9rem; color: var(--text-color); cursor: pointer; transition: 0.3s; display: flex; align-items: center; gap: 10px;" onclick="window.open('resume.pdf')"><i class='bx bx-download'></i> Download CV</li>
+            <li class="menu-item" style="padding: 10px 20px; font-size: 0.9rem; color: var(--text-color); cursor: pointer; transition: 0.3s; display: flex; align-items: center; gap: 10px;" onclick="document.getElementById('dev-terminal').style.display='flex'; document.getElementById('terminal-input').focus();"><i class='bx bx-terminal'></i> Open Terminal</li>
             <div style="height: 1px; background: rgba(255, 107, 158, 0.2); margin: 5px 0;"></div>
             <li class="menu-item" style="padding: 10px 20px; font-size: 0.9rem; color: var(--text-color); cursor: pointer; transition: 0.3s; display: flex; align-items: center; gap: 10px;" onclick="document.getElementById('dark-mode-icon').click()"><i class='bx bx-moon'></i> Toggle Dark Mode</li>
         </ul>

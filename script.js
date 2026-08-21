@@ -559,3 +559,63 @@ if (customMenu) {
     });
 }
 // --- END FINAL TOUCHES --- //
+
+
+// --- DEVELOPER TERMINAL LOGIC --- //
+// Toggle with ~ or `
+document.addEventListener('keydown', (e) => {
+    if (e.key === '`' || e.key === '~') {
+        e.preventDefault(); // Prevent typing the backtick
+        const term = document.getElementById('dev-terminal');
+        if(term) {
+            term.style.display = (term.style.display === 'none' || term.style.display === '') ? 'flex' : 'none';
+            if (term.style.display === 'flex') document.getElementById('terminal-input').focus();
+        }
+    }
+});
+
+const termClose = document.getElementById('close-terminal');
+if (termClose) {
+    termClose.addEventListener('click', () => {
+        document.getElementById('dev-terminal').style.display = 'none';
+    });
+}
+
+const termInput = document.getElementById('terminal-input');
+const termOutput = document.getElementById('terminal-output');
+if (termInput) {
+    termInput.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') {
+            const cmd = termInput.value.trim().toLowerCase();
+            termInput.value = '';
+            
+            let response = '';
+            if (cmd === 'help') {
+                response = 'Available commands:<br>- <b style="color:#fff;">whoami</b>: Developer identity<br>- <b style="color:#fff;">ls</b>: List technical skills<br>- <b style="color:#fff;">cat resume.pdf</b>: View resume link<br>- <b style="color:#fff;">sudo hire kushu</b>: Initiate hiring protocol<br>- <b style="color:#fff;">clear</b>: Clear terminal screen';
+            } else if (cmd === 'whoami') {
+                response = 'Kushu Shukla - AI Engineer, Full Stack Web Developer, & Social Media Strategist.';
+            } else if (cmd === 'ls') {
+                response = '<span style="color:#ce9178;">python.py</span>  <span style="color:#4ec9b0;">react.jsx</span>  <span style="color:#dcdcaa;">flask.py</span>  <span style="color:#9cdcfe;">docker_image</span>  <span style="color:#c586c0;">langchain.txt</span>';
+            } else if (cmd === 'cat resume.pdf') {
+                response = 'Loading securely... <a href="resume.pdf" target="_blank" style="color: #ff6b9e; text-decoration: underline;">Click here to download</a>';
+            } else if (cmd === 'sudo hire kushu') {
+                response = 'Access Granted. Redirecting to contact page...';
+                setTimeout(() => window.location.href = '#contact', 1500);
+            } else if (cmd === 'clear') {
+                termOutput.innerHTML = '';
+                return;
+            } else if (cmd !== '') {
+                response = `kushuos: command not found: ${cmd}`;
+            }
+            
+            if (cmd !== '') {
+                termOutput.innerHTML += `<div><span style="color: #569cd6;">kushu@portfolio:~$</span> <span style="color:#fff;">${cmd}</span></div>`;
+                termOutput.innerHTML += `<div style="margin-bottom: 12px; margin-top: 4px;">${response}</div>`;
+            }
+            
+            const termBody = document.getElementById('terminal-body');
+            termBody.scrollTop = termBody.scrollHeight;
+        }
+    });
+}
+// --- END TERMINAL LOGIC --- //
