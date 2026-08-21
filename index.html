@@ -629,20 +629,20 @@
                 <input type="hidden" name="subject" value="New Contact from Portfolio Website">
                 <input type="hidden" name="redirect" value="https://web3forms.com/success">
                 <div class="input-box">
-                    <input type="text" placeholder="First Name" required>
-                    <input type="email" placeholder="Email Address" required>
+                    <input type="text" name="name" placeholder="First Name" required>
+                    <input type="email" name="email" placeholder="Email Address" required>
                 </div>
                 <div class="input-box">
-                    <input type="text" placeholder="Project Type / Subject" style="width: 100%;" required>
+                    <input type="text" name="project_type" placeholder="Project Type / Subject" style="width: 100%;" required>
                 </div>
                 <div class="input-box" style="margin-bottom: 1rem;">
                     <label style="display: block; font-size: 0.9rem; margin-bottom: 0.5rem; color: #777;">Request a Meeting Date & Time (Optional)</label>
                     <div style="display: flex; gap: 1rem; width: 100%;">
-                        <input type="date" style="flex: 1;">
-                        <input type="time" style="flex: 1;">
+                        <input type="date" name="date" style="flex: 1;">
+                        <input type="time" name="time" style="flex: 1;">
                     </div>
                 </div>
-                <textarea name="" id="" cols="30" rows="6" placeholder="Tell me about your project..." required></textarea>
+                <textarea name="message" id="message" cols="30" rows="6" placeholder="Tell me about your project..." required></textarea>
                 <button type="submit" class="btn send-btn">Send Message <i class='bx bx-send'></i></button>
             </form>
 
