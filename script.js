@@ -214,7 +214,7 @@ function handleUserChat() {
         let reply = "I'm just a simple AI bot! To talk to the real Kushu, please use the Contact Form at the bottom of the page. She will get back to you ASAP! 😊";
         
         if (lower.includes("price") || lower.includes("cost") || lower.includes("charge") || lower.includes("money")) {
-            reply = "My freelance web development services start at just $8,000 per website! Send me a message using the Contact Form for a custom quote. 💰";
+            reply = "My freelance web development services start at just $90 per website! Send me a message using the Contact Form for a custom quote. 💰";
         } else if (lower.includes("code") || lower.includes("dev") || lower.includes("tech") || lower.includes("stack") || lower.includes("ai")) {
             reply = "I am a Full Stack Developer & AI Engineer! I build robust web apps with Python/Flask, React, and integrate GenAI (like RAG systems). Check out my Projects section! 🚀";
         } else if (lower.includes("marketing") || lower.includes("seo") || lower.includes("ad") || lower.includes("social")) {
