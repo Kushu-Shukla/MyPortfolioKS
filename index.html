@@ -21,6 +21,19 @@
 <body>
 
     
+    
+    <!-- Flashlight Cursor Glow (Dark Mode) -->
+    <div id="cursor-glow" style="position: fixed; width: 600px; height: 600px; border-radius: 50%; background: radial-gradient(circle, rgba(255,107,158,0.08) 0%, rgba(0,0,0,0) 60%); pointer-events: none; transform: translate(-50%, -50%); z-index: 0; display: none; transition: opacity 0.3s;"></div>
+
+    <!-- Live Cyber Widget -->
+    <div class="cyber-widget" style="position: fixed; top: 120px; right: 20px; background: rgba(255,255,255,0.1); backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px); border: 1px solid rgba(255,107,158,0.2); padding: 10px 15px; border-radius: 12px; z-index: 100; font-family: 'Poppins', sans-serif; box-shadow: 0 5px 15px rgba(0,0,0,0.05); text-align: center; color: var(--text-color);">
+        <div id="cw-time" style="font-size: 1.1rem; font-weight: 700; color: var(--main-color); letter-spacing: 1px;">00:00:00</div>
+        <div style="font-size: 0.75rem; font-weight: 600; margin-top: 5px; display: flex; align-items: center; justify-content: center; gap: 5px;">
+            <i class='bx bxs-battery-charging' style="color: #2ecc71; font-size: 1rem;"></i>
+            <span id="cw-battery">100%</span>
+        </div>
+    </div>
+
     <!-- Scroll Progress Bar -->
     <div id="scroll-progress" style="position: fixed; top: 0; left: 0; width: 0%; height: 4px; background: var(--main-color); z-index: 10000; box-shadow: 0 0 10px var(--main-color); border-radius: 0 2px 2px 0;"></div>
     
@@ -719,6 +732,7 @@
     </div>
 
     <!-- JAVASCRIPT -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js"></script>
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script src="script.js"></script>

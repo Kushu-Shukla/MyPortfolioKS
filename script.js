@@ -435,3 +435,82 @@ function triggerMatrix() {
     }, 5000); // Hide after 5 seconds
 }
 // --- END AWWWARDS FEATURES --- //
+
+
+// --- NEW PREMIUM FEATURES --- //
+
+// 1. Flashlight Cursor Glow (Dark Mode Only)
+const cursorGlow = document.getElementById('cursor-glow');
+window.addEventListener('mousemove', (e) => {
+    if (cursorGlow) {
+        if (document.body.classList.contains('dark-mode')) {
+            cursorGlow.style.display = 'block';
+            cursorGlow.style.left = e.clientX + 'px';
+            cursorGlow.style.top = e.clientY + 'px';
+        } else {
+            cursorGlow.style.display = 'none';
+        }
+    }
+});
+
+// 2. Live Cyber Widget (Clock & Battery)
+setInterval(() => {
+    const timeEl = document.getElementById('cw-time');
+    if(timeEl) timeEl.innerText = new Date().toLocaleTimeString();
+}, 1000);
+
+if ('getBattery' in navigator) {
+    navigator.getBattery().then(function(battery) {
+        function updateBatteryInfo() {
+            const batEl = document.getElementById('cw-battery');
+            if(batEl) batEl.innerText = Math.round(battery.level * 100) + '%';
+        }
+        updateBatteryInfo();
+        battery.addEventListener('levelchange', updateBatteryInfo);
+    });
+}
+
+// 3. Premium UI Sound Effects
+const clickSound = new Audio("https://assets.mixkit.co/active_storage/sfx/2568/2568-preview.mp3");
+const swooshSound = new Audio("https://assets.mixkit.co/active_storage/sfx/2955/2955-preview.mp3");
+clickSound.volume = 0.3;
+swooshSound.volume = 0.4;
+
+document.querySelectorAll('.btn, .close-modal, .navbar a').forEach(el => {
+    el.addEventListener('click', () => { 
+        clickSound.currentTime = 0; 
+        clickSound.play().catch(e=>console.log(e)); 
+    });
+});
+const dmIcon = document.getElementById('dark-mode-icon');
+if(dmIcon) {
+    dmIcon.addEventListener('click', () => {
+        swooshSound.currentTime = 0;
+        swooshSound.play().catch(e=>console.log(e));
+    });
+}
+
+// 4. Confetti Explosion on Contact Submit
+const contactForm = document.querySelector('.contact-form');
+if (contactForm && typeof confetti !== 'undefined') {
+    contactForm.addEventListener('submit', (e) => {
+        e.preventDefault(); // Pause submission to show confetti
+        
+        var duration = 2.5 * 1000;
+        var animationEnd = Date.now() + duration;
+        var defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 999999 };
+
+        var interval = setInterval(function() {
+            var timeLeft = animationEnd - Date.now();
+            if (timeLeft <= 0) return clearInterval(interval);
+            var particleCount = 50 * (timeLeft / duration);
+            confetti(Object.assign({}, defaults, { particleCount, origin: { x: Math.random(), y: Math.random() - 0.2 } }));
+        }, 250);
+        
+        // Submit the form after 2.5 seconds
+        setTimeout(() => {
+            contactForm.submit();
+        }, 2500);
+    });
+}
+// --- END PREMIUM FEATURES --- //
