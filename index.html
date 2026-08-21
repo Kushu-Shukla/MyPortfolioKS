@@ -575,6 +575,27 @@
                 <textarea name="" id="" cols="30" rows="6" placeholder="Tell me about your project..." required></textarea>
                 <button type="submit" class="btn send-btn">Send Message <i class='bx bx-send'></i></button>
             </form>
+
+            <!-- FAQ Section to fill right-side blank space -->
+            <div class="faq-section" style="margin-top: 2.5rem; background: #fff; padding: 2rem; border-radius: 1.5rem; box-shadow: 0 15px 40px rgba(255, 107, 158, 0.1);">
+                <h4 style="font-size: 1.5rem; color: var(--text-color); margin-bottom: 1.5rem;"><i class='bx bx-message-rounded-dots' style="color: var(--main-color);"></i> Frequently Asked Questions</h4>
+                
+                <div style="margin-bottom: 1rem; border-bottom: 1px solid rgba(0,0,0,0.05); padding-bottom: 1rem;">
+                    <h5 style="font-size: 1rem; color: var(--main-color); margin-bottom: 0.3rem;">Do you take freelance projects?</h5>
+                    <p style="font-size: 0.9rem; color: #777; line-height: 1.5;">Yes! I build custom, responsive websites starting at ₹7,000.</p>
+                </div>
+                
+                <div style="margin-bottom: 1rem; border-bottom: 1px solid rgba(0,0,0,0.05); padding-bottom: 1rem;">
+                    <h5 style="font-size: 1rem; color: var(--main-color); margin-bottom: 0.3rem;">What marketing services do you offer?</h5>
+                    <p style="font-size: 0.9rem; color: #777; line-height: 1.5;">I offer SEO optimization, Meta Ads management, and full Social Media strategy.</p>
+                </div>
+                
+                <div>
+                    <h5 style="font-size: 1rem; color: var(--main-color); margin-bottom: 0.3rem;">How can I hire you for a full-time role?</h5>
+                    <p style="font-size: 0.9rem; color: #777; line-height: 1.5;">Please attach the job description in the contact form above, and I'll schedule a meeting!</p>
+                </div>
+            </div>
+
         </div>
     </section>
 
@@ -586,20 +607,52 @@
             <span class="close-modal" onclick="closeModal('modal-blog')">&times;</span>
             <h2 class="heading">My <span>Insights</span></h2>
             
-            <div class="blog-container" style="display: grid; gap: 2rem; margin-top: 2rem;">
-                <div class="blog-card" style="padding: 2rem; background: var(--second-bg-color); border-radius: 1.5rem; border: 1px solid rgba(255,107,158,0.1);">
-                    <div style="font-size: 0.9rem; color: var(--main-color); margin-bottom: 0.5rem; font-weight: 600;">Marketing & AI</div>
-                    <h3 style="font-size: 1.5rem; margin-bottom: 1rem;">How AI is Revolutionizing SEO in 2024</h3>
-                    <p style="color: #777; margin-bottom: 1.5rem; line-height: 1.6;">Search engines are prioritizing AI-driven user intent over traditional keyword stuffing. Learn how integrating Generative AI into your content strategy can 10x your organic traffic.</p>
-                    <a href="#" onclick="alert('Full article coming soon!'); return false;" class="btn" style="padding: 0.5rem 1.5rem; font-size: 0.9rem;">Read Article</a>
-                </div>
+            <div class="blog-container" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-top: 2rem;">
                 
-                <div class="blog-card" style="padding: 2rem; background: var(--second-bg-color); border-radius: 1.5rem; border: 1px solid rgba(255,107,158,0.1);">
-                    <div style="font-size: 0.9rem; color: var(--main-color); margin-bottom: 0.5rem; font-weight: 600;">Engineering</div>
-                    <h3 style="font-size: 1.5rem; margin-bottom: 1rem;">Architecting a RAG System for Ancient Texts</h3>
-                    <p style="color: #777; margin-bottom: 1.5rem; line-height: 1.6;">A deep dive into how I used LangChain and FAISS to build a sub-100ms vector retrieval system specifically optimized for complex Sanskrit literature.</p>
-                    <a href="#" onclick="alert('Full article coming soon!'); return false;" class="btn" style="padding: 0.5rem 1.5rem; font-size: 0.9rem;">Read Article</a>
+                <!-- Blog 1 -->
+                <div class="blog-card" style="background: var(--second-bg-color); border-radius: 1.5rem; border: 1px solid rgba(255,107,158,0.1); overflow: hidden;">
+                    <img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?q=80&w=600&auto=format&fit=crop" style="width: 100%; height: 200px; object-fit: cover;">
+                    <div style="padding: 1.5rem;">
+                        <div style="font-size: 0.9rem; color: var(--main-color); margin-bottom: 0.5rem; font-weight: 600;">Fashion & Lifestyle</div>
+                        <h3 style="font-size: 1.3rem; margin-bottom: 1rem;">Building a Personal Brand as a Woman in Tech</h3>
+                        <p style="color: #777; margin-bottom: 1.5rem; line-height: 1.6; font-size: 0.9rem;">Who says engineers can't be fashionable? Merging aesthetics with algorithms to create a unique and powerful digital presence.</p>
+                        <a href="#" onclick="alert('Full article coming soon!'); return false;" class="btn" style="padding: 0.5rem 1.5rem; font-size: 0.9rem;">Read More</a>
+                    </div>
                 </div>
+
+                <!-- Blog 2 -->
+                <div class="blog-card" style="background: var(--second-bg-color); border-radius: 1.5rem; border: 1px solid rgba(255,107,158,0.1); overflow: hidden;">
+                    <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?q=80&w=600&auto=format&fit=crop" style="width: 100%; height: 200px; object-fit: cover;">
+                    <div style="padding: 1.5rem;">
+                        <div style="font-size: 0.9rem; color: var(--main-color); margin-bottom: 0.5rem; font-weight: 600;">Marketing</div>
+                        <h3 style="font-size: 1.3rem; margin-bottom: 1rem;">Scaling Fashion Brands with Meta Ads</h3>
+                        <p style="color: #777; margin-bottom: 1.5rem; line-height: 1.6; font-size: 0.9rem;">How to use targeted Instagram and Facebook campaigns to drastically lower customer acquisition costs for aesthetic fashion brands.</p>
+                        <a href="#" onclick="alert('Full article coming soon!'); return false;" class="btn" style="padding: 0.5rem 1.5rem; font-size: 0.9rem;">Read More</a>
+                    </div>
+                </div>
+
+                <!-- Blog 3 -->
+                <div class="blog-card" style="background: var(--second-bg-color); border-radius: 1.5rem; border: 1px solid rgba(255,107,158,0.1); overflow: hidden;">
+                    <img src="https://images.unsplash.com/photo-1432821596592-e2c18b78144f?q=80&w=600&auto=format&fit=crop" style="width: 100%; height: 200px; object-fit: cover;">
+                    <div style="padding: 1.5rem;">
+                        <div style="font-size: 0.9rem; color: var(--main-color); margin-bottom: 0.5rem; font-weight: 600;">Marketing & AI</div>
+                        <h3 style="font-size: 1.3rem; margin-bottom: 1rem;">How AI is Revolutionizing SEO in 2024</h3>
+                        <p style="color: #777; margin-bottom: 1.5rem; line-height: 1.6; font-size: 0.9rem;">Search engines prioritize user intent over keyword stuffing. Learn how Generative AI can 10x your organic traffic.</p>
+                        <a href="#" onclick="alert('Full article coming soon!'); return false;" class="btn" style="padding: 0.5rem 1.5rem; font-size: 0.9rem;">Read More</a>
+                    </div>
+                </div>
+
+                <!-- Blog 4 -->
+                <div class="blog-card" style="background: var(--second-bg-color); border-radius: 1.5rem; border: 1px solid rgba(255,107,158,0.1); overflow: hidden;">
+                    <img src="https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?q=80&w=600&auto=format&fit=crop" style="width: 100%; height: 200px; object-fit: cover;">
+                    <div style="padding: 1.5rem;">
+                        <div style="font-size: 0.9rem; color: var(--main-color); margin-bottom: 0.5rem; font-weight: 600;">Engineering</div>
+                        <h3 style="font-size: 1.3rem; margin-bottom: 1rem;">RAG Systems for Complex Data</h3>
+                        <p style="color: #777; margin-bottom: 1.5rem; line-height: 1.6; font-size: 0.9rem;">A deep dive into how I used LangChain and FAISS to build a sub-100ms vector retrieval system.</p>
+                        <a href="#" onclick="alert('Full article coming soon!'); return false;" class="btn" style="padding: 0.5rem 1.5rem; font-size: 0.9rem;">Read More</a>
+                    </div>
+                </div>
+
             </div>
         </div>
     </div>
