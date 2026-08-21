@@ -19,6 +19,15 @@
     
 </head>
 <body>
+
+    <!-- Premium Preloader -->
+    <div id="preloader" style="position: fixed; top: 0; left: 0; width: 100%; height: 100vh; background: var(--bg-color); z-index: 9999; display: flex; flex-direction: column; justify-content: center; align-items: center; transition: opacity 0.5s ease, visibility 0.5s ease;">
+        <h2 style="font-family: 'Dancing Script', cursive; font-size: 4rem; color: var(--main-color); margin-bottom: 20px; animation: pulseLogo 1s infinite alternate;">Kushu.</h2>
+        <div style="width: 200px; height: 3px; background: rgba(255,107,158,0.2); border-radius: 5px; overflow: hidden; position: relative;">
+            <div style="position: absolute; top: 0; left: 0; height: 100%; width: 50%; background: var(--main-color); border-radius: 5px; animation: loadingBar 1.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;"></div>
+        </div>
+    </div>
+
     <!-- Custom Cursor -->
     <div class="cursor-dot" id="cursor-dot"></div>
     <div class="cursor-outline" id="cursor-outline"></div>
@@ -703,6 +712,7 @@
     </div>
 
     <!-- JAVASCRIPT -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js"></script>
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script src="script.js"></script>
 

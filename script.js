@@ -1,3 +1,28 @@
+
+// Preloader Logic
+window.addEventListener('load', () => {
+    setTimeout(() => {
+        const preloader = document.getElementById('preloader');
+        if (preloader) {
+            preloader.style.opacity = '0';
+            preloader.style.visibility = 'hidden';
+            setTimeout(() => preloader.remove(), 500); // remove from DOM
+        }
+    }, 1200); // 1.2s loading screen
+});
+
+// Vanilla Tilt 3D Effect for Cards
+if (typeof VanillaTilt !== 'undefined') {
+    // We add tilt to any interactive cards!
+    VanillaTilt.init(document.querySelectorAll(".services-box, .projects-box, .blog-card, .info-card, .cert-box"), {
+        max: 10,
+        speed: 400,
+        glare: true,
+        "max-glare": 0.3,
+        scale: 1.02
+    });
+}
+
 // Typed.js initialization
 var typed = new Typed('.multiple-text', {
     strings: ['AI Engineer', 'Full Stack Developer', 'SEO & Meta Ads Expert'],
