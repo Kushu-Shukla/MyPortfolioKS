@@ -695,7 +695,7 @@ body.dark-mode .navbar a {
 
 /* RESPONSIVE */
 @media (max-width: 991px) {
-    .header { padding: 2rem 5%; }
+    .header { padding: 15px 5%; }
     section { padding: 5rem 5% 2rem; }
     .home { padding: 0 5%; }
 }
@@ -734,9 +734,9 @@ body.dark-mode .navbar a {
         text-align: center;
     }
 
-    .home { flex-direction: column-reverse; justify-content: center; gap: 2rem; padding-top: 120px; text-align: center; }
+    .home { flex-direction: column; justify-content: center; gap: 1rem; padding-top: 140px; text-align: center; }
     .home-content h1 { font-size: 3rem; }
-    .home-img img { width: 70vw; height: 70vw; margin-top: 2rem;}
+    .home-img img { width: 65vw; height: 65vw; margin-top: 1rem; margin-bottom: 2rem;}
     
     .about { flex-direction: column; text-align: center; gap: 2rem; }
     .about-img img { width: 70vw; height: auto; }
