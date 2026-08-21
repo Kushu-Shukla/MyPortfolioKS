@@ -25,7 +25,7 @@ if (typeof VanillaTilt !== 'undefined') {
 
 // Typed.js initialization
 var typed = new Typed('.multiple-text', {
-    strings: ['AI Engineer', 'Full Stack Developer', 'SEO & Meta Ads Expert'],
+    strings: ['AI Engineer', 'Full Stack Developer', 'Data Scientist'],
     typeSpeed: 100,
     backSpeed: 100,
     backDelay: 1000,
@@ -253,12 +253,12 @@ function handleUserChat() {
             reply = "My freelance web development services start at just $90 per website! Send me a message using the Contact Form for a custom quote. 💰";
         } else if (lower.includes("code") || lower.includes("dev") || lower.includes("tech") || lower.includes("stack") || lower.includes("ai")) {
             reply = "I am a Full Stack Developer & AI Engineer! I build robust web apps with Python/Flask, React, and integrate GenAI (like RAG systems). Check out my Projects section! 🚀";
-        } else if (lower.includes("marketing") || lower.includes("seo") || lower.includes("ad") || lower.includes("social")) {
-            reply = "I specialize in SEO, Meta Ads, and Data Analytics! I can 10x your traffic using AI-driven content strategies and targeted campaigns. 📈";
+        } else if (lower.includes("data") || lower.includes("cloud") || lower.includes("backend") || lower.includes("database")) {
+            reply = "I specialize in Cloud Architecture, Database Management, and Data Analytics! I can scale your applications using robust backend strategies. 📈";
         } else if (lower.includes("experience") || lower.includes("work") || lower.includes("job") || lower.includes("hire")) {
-            reply = "I am currently an In-House Social Media Manager at CleardartLLC, and previously worked as a Web Dev Intern at Skillible. I am open to freelance work or full-time roles! 💼";
+            reply = "I have strong experience with full stack development and AI Engineering, and previously worked as a Web Dev Intern at Skillible. I am open to freelance work or full-time roles! 💼";
         } else if (lower.includes("hi") || lower.includes("hello") || lower.includes("hey")) {
-            reply = "Hello there! 👋 How can I help you today? You can ask me about Kushu's coding, marketing, or pricing!";
+            reply = "Hello there! 👋 How can I help you today? You can ask me about Kushu's coding, data science, or pricing!";
         } else if (lower.includes("contact") || lower.includes("email") || lower.includes("phone")) {
             reply = "You can email Kushu directly at kushushukla24@gmail.com, or just scroll down and use the Contact Form! 📧";
         }
@@ -621,7 +621,7 @@ if (termInput) {
                 if(typeof triggerMatrix === 'function') triggerMatrix();
                 response = 'Initiating Matrix protocol...';
             } else if (cmd === 'whoami') {
-                response = 'Kushu Shukla - AI Engineer, Full Stack Web Developer, & Social Media Strategist.';
+                response = 'Kushu Shukla - AI Engineer, Full Stack Web Developer, & Data Scientist.';
             } else if (cmd === 'ls') {
                 response = '<span style="color:#ce9178;">python.py</span>  <span style="color:#4ec9b0;">react.jsx</span>  <span style="color:#dcdcaa;">flask.py</span>  <span style="color:#9cdcfe;">docker_image</span>  <span style="color:#c586c0;">langchain.txt</span>';
             } else if (cmd === 'cat resume.pdf') {
