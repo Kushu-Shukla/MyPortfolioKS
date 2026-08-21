@@ -154,3 +154,15 @@ darkModeIcon.addEventListener('click', () => {
         darkModeIcon.classList.replace('bx-sun', 'bx-moon');
     }
 });
+
+
+// Mobile Menu Toggle
+const menuIcon = document.getElementById('menu-icon');
+const navbar = document.querySelector('.navbar');
+
+if (menuIcon) {
+    menuIcon.addEventListener('click', () => {
+        menuIcon.classList.toggle('bx-x');
+        navbar.classList.toggle('active');
+    });
+}
