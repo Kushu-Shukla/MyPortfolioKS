@@ -662,6 +662,11 @@ body.dark-mode {
     --bg-color: #0f0f11;
     --second-bg-color: #1a1a1d;
     --text-color: #f0f0f0;
+    --header-bg: rgba(15, 15, 17, 0.9);
+}
+
+body.dark-mode .home {
+    background-color: rgba(15, 15, 17, 0.9);
 }
 
 body.dark-mode .modal-content, 
