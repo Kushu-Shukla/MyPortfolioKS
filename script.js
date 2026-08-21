@@ -565,7 +565,7 @@ if (customMenu) {
 // Toggle with ~ or `
 document.addEventListener('keydown', (e) => {
     if (e.key === '`' || e.key === '~') {
-        e.preventDefault(); // Prevent typing the backtick
+        e.preventDefault(); 
         const term = document.getElementById('dev-terminal');
         if(term) {
             term.style.display = (term.style.display === 'none' || term.style.display === '') ? 'flex' : 'none';
@@ -590,8 +590,36 @@ if (termInput) {
             termInput.value = '';
             
             let response = '';
+            
             if (cmd === 'help') {
-                response = 'Available commands:<br>- <b style="color:#fff;">whoami</b>: Developer identity<br>- <b style="color:#fff;">ls</b>: List technical skills<br>- <b style="color:#fff;">cat resume.pdf</b>: View resume link<br>- <b style="color:#fff;">sudo hire kushu</b>: Initiate hiring protocol<br>- <b style="color:#fff;">clear</b>: Clear terminal screen';
+                response = 'Available commands:<br><br>- <b style="color:#ff6b9e;">theme dark</b> | <b style="color:#ff6b9e;">theme light</b> : Change website theme<br>- <b style="color:#ff6b9e;">music play</b> | <b style="color:#ff6b9e;">music pause</b> : Control the Lofi widget<br>- <b style="color:#ff6b9e;">goto [section]</b> : Navigate (e.g. <i>goto contact, goto projects</i>)<br>- <b style="color:#ff6b9e;">matrix</b> : Trigger the hacker easter egg<br>- <b style="color:#ff6b9e;">whoami</b> : Developer identity<br>- <b style="color:#ff6b9e;">ls</b> : List technical skills<br>- <b style="color:#ff6b9e;">cat resume.pdf</b> : View resume link<br>- <b style="color:#ff6b9e;">clear</b> : Clear terminal screen';
+            } else if (cmd === 'theme dark') {
+                document.body.classList.add('dark-mode');
+                document.getElementById('dark-mode-icon').classList.replace('bx-moon', 'bx-sun');
+                response = 'Theme changed to Dark Mode.';
+            } else if (cmd === 'theme light') {
+                document.body.classList.remove('dark-mode');
+                document.getElementById('dark-mode-icon').classList.replace('bx-sun', 'bx-moon');
+                response = 'Theme changed to Light Mode.';
+            } else if (cmd === 'music play') {
+                const audio = document.getElementById('bg-music');
+                if(audio) { audio.play(); document.getElementById('music-bars').style.display = 'flex'; response = 'Playing Lofi Coding Beats... 🎵'; }
+            } else if (cmd === 'music pause') {
+                const audio = document.getElementById('bg-music');
+                if(audio) { audio.pause(); document.getElementById('music-bars').style.display = 'none'; response = 'Music paused. 🛑'; }
+            } else if (cmd.startsWith('goto ')) {
+                const section = cmd.split(' ')[1];
+                const el = document.getElementById(section);
+                if(el) {
+                    el.scrollIntoView({ behavior: 'smooth' });
+                    document.getElementById('dev-terminal').style.display = 'none';
+                    response = `Navigating to ${section}...`;
+                } else {
+                    response = `Error: Section '${section}' not found. Try 'about', 'projects', 'contact'.`;
+                }
+            } else if (cmd === 'matrix') {
+                if(typeof triggerMatrix === 'function') triggerMatrix();
+                response = 'Initiating Matrix protocol...';
             } else if (cmd === 'whoami') {
                 response = 'Kushu Shukla - AI Engineer, Full Stack Web Developer, & Social Media Strategist.';
             } else if (cmd === 'ls') {
@@ -605,7 +633,7 @@ if (termInput) {
                 termOutput.innerHTML = '';
                 return;
             } else if (cmd !== '') {
-                response = `kushuos: command not found: ${cmd}`;
+                response = `kushuos: command not found: ${cmd}. Type 'help' for available commands.`;
             }
             
             if (cmd !== '') {
